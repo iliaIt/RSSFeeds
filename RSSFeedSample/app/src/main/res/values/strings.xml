@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">RSSFeedSample</string>
-    <string name="buttonOne">B_one</string>
+    <string name="button_One">B_one</string>
     <string name="about">About</string>
     <string name="help">Help</string>
+    <string name="info">Info:</string>
+    <string name="button_OK">OK</string>
+    <string name="alert_NetworkConnection">Please check you network connection!</string>
+    <string name="alert_Title">Alert</string>
 </resources>

@@ -7,18 +7,27 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.iko.rssfeedsample.Threads.RSSFeedThread;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    final public String FEED_1 = "http://www.plovdiv24.bg/rss.php";
     private Button rssFeed1;
+    private TextView info;
+    private TextView rssFeedXML;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("LifeCycle", "onCreate()");
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main);
         rssFeed1 = (Button) findViewById( R.id.buttonRssFeed1);
         rssFeed1.setOnClickListener(this);
+        info = (TextView) findViewById(R.id.textView_Info);
+        rssFeedXML = (TextView) findViewById(R.id.textView_RssFeedXML);
+
     }
 
     @Override
@@ -63,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if( v.getId() == R.id.buttonRssFeed1 ){
             Log.d( "Click Listener", "Button RssFeed1 was clicked ! " );
         }
+        RSSFeedThread feedThread = new RSSFeedThread( this, rssFeedXML, info);
+        feedThread.execute(FEED_1);
     }
 
     @Override
