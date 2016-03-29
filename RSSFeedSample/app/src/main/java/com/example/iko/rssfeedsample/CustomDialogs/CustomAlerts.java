@@ -1,4 +1,4 @@
-package com.example.iko.rssfeedsample.AlertDialogs;
+package com.example.iko.rssfeedsample.CustomDialogs;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -9,7 +9,7 @@ import android.os.Bundle;
 import com.example.iko.rssfeedsample.R;
 
 /**
- * Created by iko on 29.03.16.
+ * Created by iko on 29.03.16  22:05
  */
 public class CustomAlerts extends DialogFragment {
     @Override

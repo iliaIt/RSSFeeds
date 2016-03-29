@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.iko.rssfeedsample.Threads.RSSFeedThread;
+import com.example.iko.rssfeedsample.CustomThreads.RSSFeedThread;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

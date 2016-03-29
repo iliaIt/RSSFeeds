@@ -1,25 +1,23 @@
-package com.example.iko.rssfeedsample.Threads;
+package com.example.iko.rssfeedsample.CustomThreads;
 
 import android.app.DialogFragment;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.iko.rssfeedsample.AlertDialogs.CustomAlerts;
+import com.example.iko.rssfeedsample.CustomDialogs.CustomAlerts;
 import com.example.iko.rssfeedsample.MainActivity;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 
 /**
- * Created by iko on 10.03.16.
+ * Created by iko on 10.03.16
  */
 public class RSSFeedThread extends AsyncTask< String, String, String > {
 
@@ -65,7 +63,7 @@ public class RSSFeedThread extends AsyncTask< String, String, String > {
 
         }
         xmlResponse.setText( strings );
-        info.setText( "Info: Status code - " + statusCode );
+        info.setText(String.format("Info: Status code - %d", statusCode));
     }
 
     protected String feed( String urlFeed ){
@@ -89,15 +87,11 @@ public class RSSFeedThread extends AsyncTask< String, String, String > {
 
             String responseLine;
             while ( ( responseLine = inReader.readLine() ) != null ) {
-                response.append( responseLine + "\n" );
+                response.append(responseLine).append("\n");
             }
 
 
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
         }
 
