@@ -7,4 +7,24 @@
     <string name="button_OK">OK</string>
     <string name="alert_NetworkConnection">Please check you network connection!</string>
     <string name="alert_Title">Alert</string>
+
+    <string name="rssAdapter_ViewHolderId">ViewHandlerId</string>
+
+    <string-array name="names">
+        <item >name1</item>
+        <item >name2</item>
+        <item >name3</item>
+        <item >name4</item>
+        <item >name5</item>
+        <item >name6</item>
+    </string-array>
+    <string-array name="description">
+        <item >description1</item>
+        <item >description2</item>
+        <item >description3</item>
+        <item >description4</item>
+        <item >description5</item>
+        <item >description6</item>
+    </string-array>
+
 </resources>

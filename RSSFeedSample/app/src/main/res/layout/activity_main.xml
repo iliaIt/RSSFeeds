@@ -4,17 +4,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="0.20"
-        android:text="@string/button_One"
-        android:id="@+id/buttonRssFeed1"/>
+        android:layout_weight="0.10"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_One"
+            android:id="@+id/buttonRssFeed1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_One"
+            android:id="@+id/buttonAddFeed"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_One"
+            android:id="@+id/buttonDeleteFeed"/>
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="0.70"
+        android:layout_weight="0.30"
         android:orientation="vertical">
 
         <TextView
@@ -24,6 +42,13 @@
             />
 
     </ScrollView>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.50"
+        android:id="@+id/listView_FeedsUrls"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dip"

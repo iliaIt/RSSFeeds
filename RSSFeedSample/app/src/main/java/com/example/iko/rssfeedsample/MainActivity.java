@@ -1,5 +1,6 @@
 package com.example.iko.rssfeedsample;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -7,22 +8,27 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.iko.rssfeedsample.CustomAdapters.RssUrlsAdapter;
 import com.example.iko.rssfeedsample.CustomThreads.RSSFeedThread;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
-    final public String FEED_1 = "http://www.plovdiv24.bg/rss.php";
+    final private String FEED_1 = "http://www.plovdiv24.bg/rss.php";
     private Button rssFeed1;
     private TextView info;
     private TextView rssFeedXML;
     private ListView rssFeedsList;
-    String list[] = {"Name1", "name2", "name6", "name6", "name5", "name4", "name3"};
+    //String listValues[] = {"Name1", "name2", "name6", "name6", "name5", "name4", "name3"};
+
+    //resources for adapter
+    String names[];
+    String descriptions[];
+    int images[] = new int[]{ R.drawable.android1, R.drawable.android2, R.drawable.android3, R.drawable.android4, R.drawable.android6, R.drawable.android7 };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +41,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rssFeedXML = (TextView) findViewById(R.id.textView_RssFeedXML);
         rssFeedsList = (ListView) findViewById( R.id.listView_FeedsUrls );
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, list );
-        rssFeedsList.setAdapter( adapter );
+        Resources resources = getResources();
+        names = resources.getStringArray(R.array.names);
+        descriptions = resources.getStringArray(R.array.description);
+
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, listValues );
+        RssUrlsAdapter adapter = new RssUrlsAdapter( this, names, descriptions, images);
+        rssFeedsList.setAdapter(adapter);
         rssFeedsList.setOnItemClickListener(this);
+
     }
 
     @Override
@@ -95,7 +107,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        TextView tview = (TextView) view;
+        TextView tview = (TextView) view.findViewById( R.id.textView_Name);
         Toast.makeText(MainActivity.this, tview.getText() , Toast.LENGTH_SHORT).show();
     }
+
 }
