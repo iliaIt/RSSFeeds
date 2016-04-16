@@ -1,5 +1,6 @@
 package com.example.iko.rssfeedsample;
 
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,7 @@ import com.example.iko.rssfeedsample.CustomThreads.RSSFeedThread;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     final private String FEED_1 = "http://www.plovdiv24.bg/rss.php";
+    final private String PERSIST_RESPONSE_CODE = "RssResponseCode";
     private Button rssFeed1;
     private TextView info;
     private TextView rssFeedXML;
@@ -62,12 +64,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
         Log.d("LifeCycle", "onResume()");
+        loadPersistentSimpleData();
+
     }
 
     @Override
     protected void onPause() {  //back to onResume
         super.onPause();
         Log.d("LifeCycle", "onPause()");
+        savePersistentSimpleData();
     }
 
     @Override
@@ -109,6 +114,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         TextView tview = (TextView) view.findViewById( R.id.textView_Name);
         Toast.makeText(MainActivity.this, tview.getText() , Toast.LENGTH_SHORT).show();
+    }
+
+    //Shared preference
+    public void savePersistentSimpleData(){
+        String infoText = info.getText().toString();
+        SharedPreferences preferences = getPreferences( MODE_PRIVATE ); //preferences = getSharedPreferences("", MODE_PRIVATE );
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(PERSIST_RESPONSE_CODE, infoText );
+        editor.commit();
+    }
+    public void loadPersistentSimpleData(){
+        SharedPreferences preferences = getPreferences( MODE_PRIVATE ); //preferences = getSharedPreferences("", MODE_PRIVATE );
+        String infoText = preferences.getString(PERSIST_RESPONSE_CODE, "");
+        if( !infoText.isEmpty() ){
+            info.setText(infoText );
+        }
     }
 
 }
