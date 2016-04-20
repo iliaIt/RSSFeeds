@@ -8,24 +8,26 @@
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_weight="0.20"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_One"
-            android:id="@+id/buttonRssFeed1"/>
+            android:id="@+id/buttonRssFeed1"
+            android:layout_weight="1"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/button_One"
-            android:id="@+id/buttonAddFeed"/>
+            android:text="@string/button_AddRss"
+            android:id="@+id/buttonAddFeed"
+            android:layout_weight="1"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/button_One"
-            android:id="@+id/buttonDeleteFeed"/>
+            android:text="@string/button_DeleteRss"
+            android:id="@+id/buttonDeleteFeed"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 

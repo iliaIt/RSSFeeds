@@ -5,26 +5,38 @@
     <string name="help">Help</string>
     <string name="info">Info:</string>
     <string name="button_OK">OK</string>
+    <string name="button_Cancel">Cancel</string>
+    <string name="button_Save">Save</string>
+    <string name="button_Delete">Delete</string>
     <string name="alert_NetworkConnection">Please check you network connection!</string>
     <string name="alert_Title">Alert</string>
-
+    <string name="button_AddRss">Add RSS</string>
+    <string name="button_DeleteRss">Delete RSS</string>
+    <string name="editText_rssUrl">RSS URL</string>
+    <string name="editText_rssDescription">RSS Description</string>
+    <string name="dialog_AddRss_Title">Fill the rss Url and description!</string>
     <string name="rssAdapter_ViewHolderId">ViewHandlerId</string>
+    <string name="rssAdapter_Feed_DB_Id">ID</string>
+    // this is for the checkbox that is marker for deleting feeds
+    <string name="checkBox_positionTag">position</string>
+    <string name="checkBox_objectTag">object</string>
 
     <string-array name="names">
-        <item >name1</item>
-        <item >name2</item>
-        <item >name3</item>
-        <item >name4</item>
-        <item >name5</item>
-        <item >name6</item>
+        <item>name1</item>
+        <item>name2</item>
+        <item>name3</item>
+        <item>name4</item>
+        <item>name5</item>
+        <item>name6</item>
     </string-array>
     <string-array name="description">
-        <item >description1</item>
-        <item >description2</item>
-        <item >description3</item>
-        <item >description4</item>
-        <item >description5</item>
-        <item >description6</item>
+        <item>description1</item>
+        <item>description2</item>
+        <item>description3</item>
+        <item>description4</item>
+        <item>description5</item>
+        <item>description6</item>
     </string-array>
+    <string name="title_activity_test">TestActivity</string>
 
 </resources>

@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.iko.rssfeedsample.CustomDialogs.CustomAlerts;
+import com.example.iko.rssfeedsample.CustomDialogs.NetworkAlert;
 import com.example.iko.rssfeedsample.MainActivity;
 
 import java.io.BufferedReader;
@@ -58,7 +58,7 @@ public class RSSFeedThread extends AsyncTask< String, String, String > {
         Log.d("LifeCycle", "onPostExecute");
         //Here I have the xml feed in the string, and I can convert it now
         if( strings == null || strings.isEmpty() ){
-            DialogFragment newFragment = new CustomAlerts();
+            DialogFragment newFragment = new NetworkAlert();
             newFragment.show(activity.getFragmentManager(), "test");
 
         }
