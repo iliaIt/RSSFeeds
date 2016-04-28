@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //    String names[];
 //    String descriptions[];
 //    int images[] = new int[]{ R.drawable.android1, R.drawable.android2, R.drawable.android3, R.drawable.android4, R.drawable.android6, R.drawable.android7 };
-
+//Some test
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
